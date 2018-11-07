@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<h4>@ViewBag.Result</h4>
+
+
+
+<form action="/WithdrawlDeposit/Index" method="post">
+
+    <label name="Amount">Amount</label> <input type="text" name="Amount">
+    <label name="accountName">accountName</label> <input type="text" name="accountName">
+    <input type="submit" name="action" value="Withdrawl" />
+    <input type="submit" name="action" value="Deposit" />
+
+
+
+</form>
