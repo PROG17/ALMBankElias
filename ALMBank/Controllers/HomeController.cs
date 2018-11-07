@@ -10,16 +10,9 @@ namespace ALMBank.Controllers
 {
     public class HomeController : Controller
     {
-        private BankRepository _repo;
-
-        public HomeController(BankRepository repo)
-        {
-            _repo = repo;
-        }
-
         public IActionResult Index()
         {
-            return View(_repo);
+            return View();
         }
 
         public IActionResult About()

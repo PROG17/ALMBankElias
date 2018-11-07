@@ -1,44 +1,5 @@
-﻿@model BankRepository
-
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="row">
-    <div class="col-md-12">
-
-        <h1>Elias Mohammed</h1>
-
-
-
-        <h3>Kunder</h3>
-        <ul>
-
-            @foreach (var item in Model.Customers)
-            {
-            <li>
-                <p>kundID:  @item.CustomerID </p>
-                <p>kundNamn:  @item.Name </p>
-            </li>
-
-            }
-
-        </ul>
-
-        <h3>Konton</h3>
-        <ul>
-
-            @foreach (var item in Model.Accounts)
-            {
-                <li>
-                <p>kontonamn:  @item.AccountName </p>
-                <p>kontoSaldo:  @item.Balance </p>
-                <p>Kund:  @item.Customer.Name </p>
-                </li>
-
-            }
-        </ul>
-
-    </div>
-</div>
-
+<h3>Elias Mohammed</h3>
