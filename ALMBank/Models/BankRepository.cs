@@ -48,7 +48,7 @@ namespace ALMBank.Models
             if (targetAccount != null)
             {
 
-                if (targetAccount.Balance > withdrawlAmount)
+                if (targetAccount.Balance >= withdrawlAmount)
                 {
                     targetAccount.Balance = targetAccount.Balance - withdrawlAmount;
                     return "Det gick bra";
@@ -62,6 +62,39 @@ namespace ALMBank.Models
             {
                 return "Konto finns ej";
             }
+        }
+
+        public string Transfer(int amount, string fromAccountName, string toAccountName)
+        {
+            var targetToAccount = Accounts.Where(x => x.AccountName == toAccountName).FirstOrDefault();
+            var targetFromAccount = Accounts.Where(x => x.AccountName == fromAccountName).FirstOrDefault();
+
+            if (targetToAccount != null && targetFromAccount != null)
+            {
+                var result = Withdrawl(amount, fromAccountName);
+                if (result == "Det gick bra")
+                {
+                    var result2 = Deposit(amount, toAccountName);
+
+                    if (result2 == "Bra stålar")
+                    {
+                        return "Överförde " + amount + "kr \nFrån: " + fromAccountName + " \nTill: " + toAccountName;
+                    }
+                    else
+                    {
+                        return result2;
+                    }
+                }
+                else
+                {
+                    return result;
+                }
+            }
+            else
+            {
+                return "Konto finns ej";
+            }
+
         }
 
     }
