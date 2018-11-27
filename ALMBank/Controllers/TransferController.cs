@@ -31,7 +31,6 @@ namespace ALMBank.Controllers
                 return View();
             }
 
-
             int amount2;
             var succes = int.TryParse(amount, out amount2);
 
