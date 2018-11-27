@@ -26,7 +26,7 @@ namespace ALMBank.Controllers
         {
             if (fromAccountName == null || toAccountName == null || amount == null)
             {
-                ViewBag.Result = "Fyll i alla fält.";
+                ViewBag.Result = "Fyll i alla fält!"; //Ändrar för buildtest
 
                 return View();
             }
