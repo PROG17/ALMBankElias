@@ -22,7 +22,6 @@ namespace ALMBank.Controllers
             return View(_repo);
         }
 
-
         public IActionResult Privacy()
         {
             return View();
