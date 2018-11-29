@@ -15,6 +15,7 @@ namespace ALMBank.Controllers
         {
             _repo = repo;
             //4.0kommentar för test
+            //driftsättning 1.0
         }
 
         public IActionResult Index()
