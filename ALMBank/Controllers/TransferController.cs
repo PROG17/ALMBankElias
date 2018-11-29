@@ -14,6 +14,7 @@ namespace ALMBank.Controllers
         public TransferController(BankRepository repo)
         {
             _repo = repo;
+            //kommentar för test
         }
 
         public IActionResult Index()
